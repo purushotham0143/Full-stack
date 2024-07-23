@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider {
+            height: 15px;
+            width: 0%;
+            border: 2px solid black;
+            margin: auto;
+            margin-top: 25%;
+            border-radius: 5px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider"></div>
+    <br>
+    <button class="plus">+</button>
+    <button class="minus">-</button>
+
+    <script>
+        let width = 0;
+        const slider = document.querySelector('.slider');
+        const plusButton = document.querySelector('.plus');
+        const minusButton = document.querySelector('.minus');
+
+        plusButton.addEventListener('click', () => {
+            if (width < 100) {
+                width += 10;
+                if (width > 60) {
+                    slider.style.backgroundColor = 'red';
+                } else {
+                    slider.style.backgroundColor = 'green';
+                }
+                slider.style.width = width + '%';
+            }
+        });
+
+        minusButton.addEventListener('click', () => {
+            if (width > 0) {
+                width -= 10;
+                if (width <= 60) {
+                    slider.style.backgroundColor = 'green';
+                } else {
+                    slider.style.backgroundColor = 'red';
+                }
+                slider.style.width = width + '%';
+            }
+        });
+    </script>
+</body>
+</html>
