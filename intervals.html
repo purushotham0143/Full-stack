@@ -1,0 +1,135 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .promo {
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="promo" id="promo">0:00:00</div>
+    <h4 id="time">0</h4>
+    <button id="plus">+</button>
+    <button id="get">Get Time</button>
+    <script>
+        let count = 0;
+        let interval;
+        let isSession = true;
+
+        document.getElementById('plus').addEventListener('click', () => {
+            count++;
+            document.getElementById('time').innerText = `${count}`;
+        });
+
+        document.getElementById('get').addEventListener('click', () => {
+            let time = count * 3600;
+            startTimer(time);
+        });
+
+        function startTimer(seconds) {
+            clearInterval(interval);
+            let sessionTime = 6600; // 1 hour 50 minutes in seconds
+            let breakTime = 600; // 10 minutes in seconds
+
+            interval = setInterval(() => {
+                if (seconds <= 0) {
+                    if (isSession) {
+                        seconds = breakTime;
+                        isSession = false;
+                    } else {
+                        seconds = sessionTime;
+                        isSession = true;
+                    }
+                }
+                let hrs = Math.floor(seconds / 3600);
+                let mins = Math.floor((seconds % 3600) / 60);
+                let secs = seconds % 60;
+
+                document.getElementById('promo').innerText = `${hrs}:${mins}:${secs}`;
+                seconds--;
+            }, 1000);
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .promo {
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="promo" id="promo">0:00</div>
+    <h4 id="time">0</h4>
+    <button id="plus">+</button>
+    <button id="get">Get Time</button>
+    <h3 id="message">Session Time</h3>
+    <script>
+        let count = 0;
+        let interval;
+        let isSession = true;
+
+        document.getElementById('plus').addEventListener('click', () => {
+            count++;
+            document.getElementById('time').innerText = `${count}`;
+        });
+
+        document.getElementById('get').addEventListener('click', () => {
+            let time = count * 120; // 5 minutes in seconds
+            startTimer(time);
+        });
+
+        function startTimer(seconds) {
+            clearInterval(interval);
+            let sessionTime = 60; // 4 minutes in seconds
+            let breakTime = 60; // 1 minute in seconds
+
+            interval = setInterval(() => {
+                if (seconds <= 0) {
+                    if (isSession) {
+                        seconds = breakTime;
+                        isSession = false;
+                        document.getElementById('message').innerText = "Break Time";
+                    } else {
+                        seconds = sessionTime;
+                        isSession = true;
+                        document.getElementById('message').innerText = "Session Time";
+                    }
+                }
+                let mins = Math.floor(seconds / 60);
+                let secs = seconds % 60;
+
+                document.getElementById('promo').innerText = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+                seconds--;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
