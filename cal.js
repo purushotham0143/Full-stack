@@ -189,6 +189,7 @@ parent.remove();
         setLocalStorage();
 
 }
+
 function setLocalStorage()
 {
     //let arr=["one","two"];

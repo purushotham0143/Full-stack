@@ -2,7 +2,7 @@
 // XMLHttpRequest request=new XMlHttpRequest();
 let request=new XMLHttpRequest();
 // //2. Prepare  -> Method, URL, Mode(Async, Sync)
-request.open("GET","../data.txt");
+request.open("GET","./data.txt");
 // //3. Handle load event
 request.onload=function(){
     
