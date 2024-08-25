@@ -1,8 +1,9 @@
 let tasks=[];
+let id=0;
 let task=document.querySelector('#tasks').value;
 var taskList=document.getElementById('tasklist');
    tasks = JSON.parse(localStorage.getItem('key')) || [];
-  let  id = tasks.length > 0 ? Math.max(tasks.map(task => task.id)) + 1 : 0;
+    id = tasks.length > 0 ? Math.max(tasks.map(task => task.id)) + 1 : 0;
  // this line is used to correct the id's
 let input = document.querySelector('input');
 input.addEventListener('keypress', function (e) {
@@ -15,10 +16,10 @@ input.addEventListener('keypress', function (e) {
         tasks.push(obj);
         dowork(obj);
         localStorage.setItem('key', JSON.stringify(tasks));
+        total();
         input.value = " ";
     }
 });
-
 function dowork(obj) {
     let taskdiv = document.createElement('div');
     taskdiv.setAttribute('id', obj.id);
@@ -49,6 +50,7 @@ function dowork(obj) {
             return item;
         });
         localStorage.setItem('key', JSON.stringify(tasks));
+        total();
     });
 
     let edit = document.createElement('button');
@@ -69,7 +71,7 @@ function dowork(obj) {
                 return item;
             });
             localStorage.setItem('key', JSON.stringify(tasks));
-
+            total();
             taskdiv.replaceChild(span, editInput);
             taskdiv.replaceChild(edit, saveButton);
         });
@@ -90,6 +92,7 @@ function dowork(obj) {
             if (item.id == id) {
                 tasks.splice(index, 1);
                 localStorage.setItem('key', JSON.stringify(tasks));
+                total();
             }
         });
     });
@@ -100,12 +103,18 @@ function dowork(obj) {
     taskdiv.append(edit);
     taskList.appendChild(taskdiv);
 }
-
+function total(){
+    let data = JSON.parse(localStorage.getItem('key'));
+    let len=data.length;
+    let h1=document.getElementById('h1');
+    h1.innerHTML=len;
+}
 window.onload = () => {
     let data = JSON.parse(localStorage.getItem('key'));
     if (data) {
         data.forEach(task => {
             dowork(task);
+            total();
         });
     }
 };

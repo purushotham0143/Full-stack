@@ -1,0 +1,44 @@
+{
+    "employees": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "age": 30,
+        "department": "Engineering",
+        "skills": ["JavaScript", "React", "Node.js"],
+        "address": {
+          "street": "123 Main St",
+          "city": "New York",
+          "state": "NY",
+          "zip": "10001"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "age": 27,
+        "department": "Design",
+        "skills": ["Photoshop", "Illustrator", "Figma"],
+        "address": {
+          "street": "456 Maple Ave",
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "94107"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Robert Brown",
+        "age": 35,
+        "department": "Marketing",
+        "skills": ["SEO", "Content Marketing", "Google Analytics"],
+        "address": {
+          "street": "789 Oak St",
+          "city": "Chicago",
+          "state": "IL",
+          "zip": "60611"
+        }
+      }
+    ]
+  }
+  
