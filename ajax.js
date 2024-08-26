@@ -112,11 +112,11 @@
 //     console.log(response);
 // })
 
-let test=async ()=>{
-    let data=await fetch("https://reqres.in/api/users?page=1");
-     let result=await data.json();
-    console.log(result);
+// let test=async ()=>{
+//     let data=await fetch("https://reqres.in/api/users?page=1");
+//      let result=await data.json();
+//     console.log(result);
  
- }
- test();
+//  }
+//  test();
  

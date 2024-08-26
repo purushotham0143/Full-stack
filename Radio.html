@@ -1,0 +1,140 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+   height: 300px;
+   width: 500px;
+    border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+   <Script>
+  let div=document.createElement('div');
+ div.setAttribute('class','demo');
+ document.body.append(div);
+    let input1=document.createElement('input');
+    input1.setAttribute('type','radio');
+    div.append(input1);
+    
+    let input2=document.createElement('input');
+    input2.setAttribute('type','radio');
+    div.append(input2);
+
+
+
+    let h2=document.createElement('h1');
+    input1.addEventListener('click',()=>{
+       h2.innerHTML="Slected Male";
+       
+    })
+    input2.addEventListener('click',()=>{
+       h2.innerHTML="Slected Female";
+       
+    })
+    div.append(h2);
+   </Script>
+</body>
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+   height: 300px;
+   width: 500px;
+    border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+   <Script>
+    var count=0;
+  let div=document.createElement('div');
+ div.setAttribute('class','demo');
+ document.body.append(div);
+ let n=prompt("Enter  Radio Size");
+ for(let i=0;i<n;i++){
+    
+    let input1=document.createElement('input');
+    input1.setAttribute('type','radio');
+    input1.setAttribute('name','radio');
+    input1.setAttribute('id',count);
+    console.log(input1);
+    div.append(input1);
+    let h2=document.createElement('h1');
+    input1.addEventListener('change',()=>{
+      console.log(input1.id);
+       if(input1.id>=1){
+         h2.innerHTML="Slected Male";
+       }   
+       else{
+         h2.innerHTML="Slected FeMale";
+       }
+    })
+    div.append(h2);
+     count++;
+ }
+   </Script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+   height: 300px;
+   width: 500px;
+    border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+   <Script>
+    var count=0;
+  let div=document.createElement('div');
+ div.setAttribute('class','demo');
+ document.body.append(div);
+ let n=prompt("Enter  Radio Size");
+ for(let i=0;i<n;i++){
+    
+    let input1=document.createElement('input');
+    input1.setAttribute('type','radio');
+    input1.setAttribute('name','radio');
+    input1.setAttribute('id',count);
+    console.log(input1);
+    div.append(input1);
+    let h2=document.createElement('h1');
+    input1.addEventListener('change',()=>{
+      console.log(input1.id);
+       if(input1.id>=1){
+         h2.innerHTML="Slected Male";
+       }   
+       else{
+         h2.innerHTML="Slected FeMale";
+       }
+    })
+    div.append(h2);
+     count++;
+ }
+   </Script>
+</body>
+</html>
