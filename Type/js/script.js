@@ -33,12 +33,21 @@
 // output = 1;
 // output = "sat";
 // output = true  // we cannot pass boolean as it is of type number or string
-let sum = (x, y) => {
-    if (y == undefined) {
-        y = 0;
-        console.log("Not passed argument");
-    }
-    console.log("sum called", x + y);
-};
-// sum(2,0);
-sum(2);
+// let sum = (x:number,y?:number) => {  // here we can use dafault argument also
+//     if(y==undefined){
+//         y=0;
+//         console.log("Not passed argument");
+//     }
+//     console.log("sum called",x+y);
+// }
+// // sum(2,0);
+// sum(2);
+// let arr=[1,2,3,'puru'];
+// let arr:(Number)[]=[];
+// arr.push(2);
+// console.log(arr);
+function Details(a, b) {
+    console.log(typeof a, a);
+    console.log(typeof b, b);
+}
+Details(22, "puru");
